@@ -1,0 +1,21 @@
+{
+  "name": "ngbs-form",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "main": "bundles/ngbs-form.umd.js",
+  "module": "fesm5/ngbs-form.js",
+  "es2015": "fesm2015/ngbs-form.js",
+  "esm5": "esm5/ngbs-form.js",
+  "esm2015": "esm2015/ngbs-form.js",
+  "fesm5": "fesm5/ngbs-form.js",
+  "fesm2015": "fesm2015/ngbs-form.js",
+  "typings": "ngbs-form.d.ts",
+  "metadata": "ngbs-form.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
