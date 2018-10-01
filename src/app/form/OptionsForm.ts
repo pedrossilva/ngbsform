@@ -1,13 +1,23 @@
 import {FormArray, FormBuilder, ValidatorFn} from '@angular/forms';
+import {ControlConfig} from './control.interface';
 
 export class OptionsForm<T> {
 
   arrays: {[key: string]: OptionsForm<any>} = {};
+  groups: {[key: string]: OptionsForm<any>} = {};
   requireds: Array<string> = [];
+  order: Array<string> = [];
   validators: {[key: string]: ValidatorFn} = {};
   typeControl = {control: {}, group: {}, array: {}};
 
-  constructor(private typeModel: new () => T) {
+  fieldsConfig: Array<ControlConfig> = [];
+
+  constructor(private typeModel: new () => T, assign?: OptionsForm<T>) {
+    if (assign) {
+      delete assign.constructor;
+      delete assign.typeModel;
+      Object.assign(this, assign);
+    }
   }
 
   model = (): T => new this.typeModel;

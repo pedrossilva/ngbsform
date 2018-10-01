@@ -5,21 +5,26 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormComponent } from './form/form.component';
 import { InputComponent } from './input/input.component';
 import { FieldComponent } from './field/field.component';
+import { GroupComponent } from './group/group.component';
+import {PipesModule} from '../pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PipesModule
   ],
   declarations: [
     FormComponent,
     InputComponent,
-    FieldComponent],
+    FieldComponent,
+    GroupComponent],
   exports: [
     FormComponent,
     InputComponent,
-    FieldComponent
+    FieldComponent,
+    GroupComponent
   ]
 })
 export class FormModule { }

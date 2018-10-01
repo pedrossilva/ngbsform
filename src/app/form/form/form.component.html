@@ -1,7 +1,5 @@
 <div>
-  <f-field *ngFor="let name of f.keys">
-    <f-input [name]="name" [control]="form.controls[name]"></f-input>
-  </f-field>
+  <f-group [fields]="options" (form)="form = $event"></f-group>
 
   <!--<f-form *ngFor="let name of options.typeControl.group" [options]="pessoaFormOptions" (form)="form = $event"></f-form>-->
 

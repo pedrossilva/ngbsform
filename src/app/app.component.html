@@ -1,4 +1,7 @@
-<f-form [options]="pessoaFormOptions" (form)="form = $event"></f-form>
+<div class="container">
+  <!--<f-form [options]="pessoaFormOptions" (form)="form = $event"></f-form>-->
+  <f-form [options]="controlsConfig" (form)="form = $event"></f-form>
 
 
-<pre>{{form?.value | json}}</pre>
+  <pre>{{form?.value | json}}</pre>
+</div>

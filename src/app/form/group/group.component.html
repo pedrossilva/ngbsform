@@ -1,0 +1,47 @@
+<ng-template ngFor let-field [ngForOf]="fields">
+  <!--<div *ngIf="options.groups[name]">-->
+    <!--<pre>{{name}}:-->
+      <!--{{options.groups[name] | json}}</pre>-->
+  <!--</div>-->
+  <!--<ng-template [ngIf]="options.groups[name]" [ngIfElse]="field">-->
+    <div class="col-12" *ngIf="field.type === 'group'">
+      <h4>{{field.label || field.name}}</h4>
+      <f-group [fields]="field.config || []"
+               (form)="form.setControl(field.name, $event)">
+      </f-group>
+    </div>
+
+    <f-field *ngIf="field.type === 'input'" [name]="field.name">
+      <f-input [name]="field.name" [control]="form.controls[field.name]"></f-input>
+    </f-field>
+  <!--</ng-template>-->
+  <ng-template #field2>
+    <!--<f-field [name]="field.name">-->
+      <!--<f-input [name]="field.name" [control]="form.controls[field.name]"></f-input>-->
+    <!--</f-field>-->
+  </ng-template>
+</ng-template>
+
+
+<!--<pre>{{form?.value | json}}</pre>-->
+<!--<pre>{{fields | json}}</pre>-->
+
+<!--<ng-template ngFor let-name [ngForOf]="options.order">-->
+  <!--&lt;!&ndash;<div *ngIf="options.groups[name]">&ndash;&gt;-->
+  <!--&lt;!&ndash;<pre>{{name}}:&ndash;&gt;-->
+  <!--&lt;!&ndash;{{options.groups[name] | json}}</pre>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;<ng-template [ngIf]="options.groups[name]" [ngIfElse]="field">&ndash;&gt;-->
+  <!--<div class="col-12" *ngIf="options.groups[name]; else field">-->
+    <!--<h4>{{name}}</h4>-->
+    <!--<f-group [options]="options.groups[name]"-->
+             <!--(form)="form.setControl(name, $event)">-->
+    <!--</f-group>-->
+  <!--</div>-->
+  <!--&lt;!&ndash;</ng-template>&ndash;&gt;-->
+  <!--<ng-template #field>-->
+    <!--<f-field [name]="name">-->
+      <!--<f-input [name]="name" [control]="form.controls[name]"></f-input>-->
+    <!--</f-field>-->
+  <!--</ng-template>-->
+<!--</ng-template>-->
