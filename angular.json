@@ -23,9 +23,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/bootstrap/dist/css/bootstrap-reboot.css",
-              "node_modules/bootstrap/dist/css/bootstrap-grid.css",
+//              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+//              "node_modules/bootstrap/dist/css/bootstrap-reboot.css",
+//              "node_modules/bootstrap/dist/css/bootstrap-grid.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -120,6 +120,41 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ngbs-form": {
+      "root": "projects/ngbs-form",
+      "sourceRoot": "projects/ngbs-form/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngbs-form/tsconfig.lib.json",
+            "project": "projects/ngbs-form/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngbs-form/src/test.ts",
+            "tsConfig": "projects/ngbs-form/tsconfig.spec.json",
+            "karmaConfig": "projects/ngbs-form/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngbs-form/tsconfig.lib.json",
+              "projects/ngbs-form/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]
